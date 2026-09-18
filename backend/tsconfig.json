@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "ignoreDeprecations": "5.0",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2023",
+    "useDefineForClassFields": false,
+    "lib": ["ES2023"],
+    "sourceMap": true,
+    "outDir": "./dist",
+    "incremental": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["node"],
+    "strictPropertyInitialization": false
+  },
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+}
