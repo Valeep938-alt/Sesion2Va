@@ -7,10 +7,8 @@ import { Categorias } from './Categorias';
 import { Subastas } from './Subastas';
 import { Calificaciones } from './Calificaciones';
 import { Notificaciones } from './Notificaciones';
-import { SubastaHistorialEstados } from './SubastaHistorialEstados';
 import { Pagos } from './Pagos';
 import { Pujas } from './Pujas';
-import { ReservasAcceso } from './ReservasAcceso';
 import { Sesiones } from './Sesiones';
 import { SubastaImagenes } from './SubastaImagenes';
 // agrega cualquier otra entidad que tengas en la carpeta
@@ -25,10 +23,8 @@ const ENTITIES = [
   SubastaImagenes,
   Calificaciones,
   Notificaciones,
-  SubastaHistorialEstados,
   Pagos,
   Pujas,
-  ReservasAcceso,
 ];
 
 @Module({

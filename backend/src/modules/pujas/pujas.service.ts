@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, Repository } from 'typeorm';
 import { Pujas } from '../../entities/Pujas';
 import { Subastas } from '../../entities/Subastas';
-import { ReservasAcceso } from '../../entities/ReservasAcceso';
 import { apiError } from '../../common/utils/api-error';
 import { ErrorCodes } from '../../common/constants/error-codes';
 import { enmascararCorreo } from '../../common/utils/mask.util';
@@ -50,8 +49,6 @@ export class PujasService {
     private readonly pujasRepo: Repository<Pujas>,
     @InjectRepository(Subastas)
     private readonly subastasRepo: Repository<Subastas>,
-    @InjectRepository(ReservasAcceso)
-    private readonly reservasRepo: Repository<ReservasAcceso>,
     private readonly dataSource: DataSource,
     private readonly salaState: SalaStateService,
     private readonly userRolesService: UserRolesService,
@@ -71,31 +68,6 @@ export class PujasService {
         ErrorCodes.SUBASTA_NO_ENCONTRADA,
         'La subasta no existe.',
       );
-    }
-
-    if (subasta.esPrivada) {
-      const esSubastador = requesterId === subasta.idSubastador.idUsuario;
-      const tieneReserva = requesterId
-        ? !!(await this.reservasRepo.findOne({
-            where: {
-              idSubasta: subastaId,
-              idComprador: requesterId,
-              estado: 'Aceptada',
-            },
-          }))
-        : false;
-      const roles = requesterId
-        ? await this.userRolesService.getRolesByUsuario(requesterId)
-        : [];
-      const esAdmin = roles.includes('Admin');
-
-      if (!esSubastador && !esAdmin && !tieneReserva) {
-        throw apiError(
-          HttpStatus.FORBIDDEN,
-          ErrorCodes.SUBASTA_PRIVADA,
-          'Esta subasta es privada y requiere invitación.',
-        );
-      }
     }
 
     const historial = await this.pujasRepo.find({
@@ -216,26 +188,7 @@ export class PujasService {
           'No puedes pujar en tu propia subasta.',
         );
       }
-
-      if (subasta.requiereReserva || subasta.esPrivada) {
-        const acceso = await queryRunner.manager
-          .getRepository(ReservasAcceso)
-          .findOne({
-            where: {
-              idSubasta: subastaId,
-              idComprador: usuario.userId,
-              estado: 'Aceptada',
-            },
-          });
-        if (!acceso) {
-          throw apiError(
-            HttpStatus.FORBIDDEN,
-            ErrorCodes.RESERVA_REQUERIDA,
-            'Esta subasta requiere reserva aprobada para poder pujar.',
-          );
-        }
-      }
-
+      
       const pujasRepo = queryRunner.manager.getRepository(Pujas);
       const totalPujas = await pujasRepo.count({
         where: { idSubasta: subastaId },

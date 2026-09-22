@@ -12,8 +12,6 @@ import { Calificaciones } from './Calificaciones';
 import { Notificaciones } from './Notificaciones';
 import { Pagos } from './Pagos';
 import { Pujas } from './Pujas';
-import { ReservasAcceso } from './ReservasAcceso';
-import { SubastaHistorialEstados } from './SubastaHistorialEstados';
 import { Usuarios } from './Usuarios';
 import { Categorias } from './Categorias';
 import { Relation } from 'typeorm';
@@ -95,18 +93,6 @@ export class Subastas {
 
   @OneToMany(() => Pujas, (pujas) => pujas.idSubasta2)
   pujas: Relation<Pujas>[];
-
-  @OneToMany(
-    () => ReservasAcceso,
-    (reservasAcceso) => reservasAcceso.idSubasta2,
-  )
-  reservasAccesos: Relation<ReservasAcceso>[];
-
-  @OneToMany(
-    () => SubastaHistorialEstados,
-    (subastaHistorialEstados) => subastaHistorialEstados.idSubasta,
-  )
-  subastaHistorialEstados: Relation<SubastaHistorialEstados>[];
 
   @ManyToOne(() => Usuarios, (usuarios) => usuarios.subastas)
   @JoinColumn([

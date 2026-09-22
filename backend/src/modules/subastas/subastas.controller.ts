@@ -56,13 +56,6 @@ export class SubastasController {
 
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('Subastador', 'Usuario', 'Admin')
-  @Get('estadisticas')
-  getEstadisticas(@Req() req: AuthenticatedRequest) {
-    return this.subastasService.calcularEstadisticas(req.user.userId);
-  }
-
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Subastador', 'Usuario', 'Admin')
   @Post('imagenes/verificar')
   @UseInterceptors(
     FileInterceptor('archivo', {
@@ -94,21 +87,6 @@ export class SubastasController {
   @Get(':id')
   findOne(@Param('id') id: string, @Req() req: AuthenticatedRequest) {
     return this.subastasService.findDetalle(id, req.user?.userId ?? null);
-  }
-
-  @UseGuards(JwtAuthGuard)
-  @Post(':id/inscribirse')
-  inscribirse(@Param('id') id: string, @Req() req: AuthenticatedRequest) {
-    return this.subastasService.inscribirse(id, req.user.userId);
-  }
-
-  @UseGuards(JwtAuthGuard)
-  @Delete(':id/inscribirse')
-  cancelarInscripcion(
-    @Param('id') id: string,
-    @Req() req: AuthenticatedRequest,
-  ) {
-    return this.subastasService.cancelarInscripcion(id, req.user.userId);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)

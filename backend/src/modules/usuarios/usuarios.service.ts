@@ -15,8 +15,25 @@ export class UsuariosService {
     @InjectRepository(Roles) private readonly rolesRepo: Repository<Roles>,
   ) { }
 
-  findAll() {
-    return this.usuariosRepo.find();
+  async findAll() {
+    const usuarios = await this.usuariosRepo.find();
+    const roles = await this.usuariosRolesRepo.find({ relations: ['idRol2'] });
+
+    const rolesPorUsuario = new Map<string, string[]>();
+    for (const r of roles) {
+      const lista = rolesPorUsuario.get(r.idUsuario) ?? [];
+      lista.push(r.idRol2.nombreRol);
+      rolesPorUsuario.set(r.idUsuario, lista);
+    }
+
+    return usuarios.map((u) => ({
+      id: u.idUsuario,
+      nombre: u.nombreCompleto,
+      correo: u.correo,
+      estado: u.estado,
+      fechaRegistro: u.fechaRegistro,
+      roles: rolesPorUsuario.get(u.idUsuario) ?? [],
+    }));
   }
 
   async findOne(idUsuario: string) {

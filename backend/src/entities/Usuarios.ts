@@ -3,9 +3,7 @@ import { Calificaciones } from './Calificaciones';
 import { Notificaciones } from './Notificaciones';
 import { Pagos } from './Pagos';
 import { Pujas } from './Pujas';
-import { ReservasAcceso } from './ReservasAcceso';
 import { Sesiones } from './Sesiones';
-import { SubastaHistorialEstados } from './SubastaHistorialEstados';
 import { Subastas } from './Subastas';
 import { UsuarioRoles } from './UsuarioRoles';
 
@@ -72,20 +70,8 @@ export class Usuarios {
   @OneToMany(() => Pujas, (pujas) => pujas.idUsuario2)
   pujas: Relation<Pujas>[];
 
-  @OneToMany(
-    () => ReservasAcceso,
-    (reservasAcceso) => reservasAcceso.idComprador2,
-  )
-  reservasAccesos: Relation<ReservasAcceso>[];
-
   @OneToMany(() => Sesiones, (sesiones) => sesiones.idUsuario2)
   sesiones: Sesiones[];
-
-  @OneToMany(
-    () => SubastaHistorialEstados,
-    (subastaHistorialEstados) => subastaHistorialEstados.idUsuarioResponsable,
-  )
-  subastaHistorialEstados: Relation<SubastaHistorialEstados>[];
 
   @OneToMany(() => Subastas, (subastas) => subastas.idAdminAprobador)
   subastas: Relation<Subastas>[];

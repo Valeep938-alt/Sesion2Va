@@ -4,7 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
-import { CategoríasModule } from './modules/categorías/categorías.module';
 import { UsuariosModule } from './modules/usuarios/usuarios.module';
 import { SesionesModule } from './modules/sesiones/sesiones.module';
 import { AuthModule } from './modules/auth/auth.module';
@@ -13,6 +12,8 @@ import { SupabaseModule } from './config/supabase.module.js';
 import { EntitiesModule } from './entities/entities.module.js';
 import { SubastasModule } from './modules/subastas/subastas.module';
 import { AuctionModule } from './modules/auction/auction.module';
+import { NotificationsModule } from './modules/notifications/notifications.module.js';
+import { BandejaModule } from './modules/bandeja/bandeja.module.js';
 
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
@@ -49,14 +50,15 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       }),
     }),
     EntitiesModule,
-    CategoríasModule,
     UsuariosModule,
     SesionesModule,
     AuthModule,
     CommonModule,
     SupabaseModule,
     SubastasModule,
-    AuctionModule,    
+    AuctionModule,
+    NotificationsModule,
+    BandejaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

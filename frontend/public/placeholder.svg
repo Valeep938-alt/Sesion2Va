@@ -1,0 +1,8 @@
+<!-- public/placeholder.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#f3f4f6"/>
+  <rect x="240" y="160" width="120" height="90" rx="8" fill="#e5e7eb"/>
+  <circle cx="270" cy="185" r="10" fill="#d1d5db"/>
+  <path d="M250 240 l30 -25 l25 20 l20 -15 l25 20" stroke="#d1d5db" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <text x="300" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#9ca3af">Sin imagen</text>
+</svg>
