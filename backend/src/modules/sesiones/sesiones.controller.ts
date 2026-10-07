@@ -20,3 +20,4 @@ export class SesionesController {
     return this.sesionesService.cerrarSesion(id);
   }
 }
+

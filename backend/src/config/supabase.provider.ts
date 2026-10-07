@@ -19,3 +19,4 @@ export const SupabaseProvider = {
   },
   inject: [ConfigService],
 };
+

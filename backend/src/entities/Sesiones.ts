@@ -40,3 +40,4 @@ export class Sesiones {
   @JoinColumn([{ name: 'id_usuario', referencedColumnName: 'idUsuario' }])
   idUsuario2: Relation<Usuarios>;
 }
+

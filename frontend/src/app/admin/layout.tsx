@@ -24,10 +24,10 @@ export default function AdminLayout({
 
   useEffect(() => {
     if (!user) router.replace("/auth?mode=login");
-    else if (!user.roles?.includes("Admin")) router.replace("/");
+    else if (!user.roles?.includes("Administrador")) router.replace("/");
   }, [user, router]);
 
-  if (!user?.roles?.includes("Admin")) return null;
+  if (!user?.roles?.includes("Administrador")) return null;
 
   return (
     <div className="min-h-screen bg-[#F9F8F6] flex flex-col lg:flex-row">
@@ -86,3 +86,4 @@ export default function AdminLayout({
     </div>
   );
 }
+

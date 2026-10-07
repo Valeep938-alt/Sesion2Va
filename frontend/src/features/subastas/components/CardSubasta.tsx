@@ -106,3 +106,4 @@ export function CardSubasta({ subasta }: { subasta: SubastaResumen }) {
     </article>
   );
 }
+

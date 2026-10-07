@@ -24,3 +24,4 @@ import { NotificationsModule } from '../notifications/notifications.module';
   exports: [SubastasService],
 })
 export class SubastasModule {}
+

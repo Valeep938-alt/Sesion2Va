@@ -22,7 +22,6 @@ export const crearSubastaSchema = z
       .min(2)
       .max(1000)
       .optional(),
-    esPrivada: z.boolean().default(false),
   })
   .refine((datos) => new Date(datos.fechaFin) > new Date(datos.fechaInicio), {
     message: "La fecha de fin debe ser posterior a la de inicio",
@@ -31,3 +30,4 @@ export const crearSubastaSchema = z
 
 export type CrearSubastaForm = z.output<typeof crearSubastaSchema>;
 export type CrearSubastaInput = z.input<typeof crearSubastaSchema>;
+

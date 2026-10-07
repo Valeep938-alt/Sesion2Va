@@ -25,3 +25,4 @@ export function formatearHora(timestamp: number): string {
     second: "2-digit",
   });
 }
+

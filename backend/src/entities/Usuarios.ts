@@ -1,7 +1,6 @@
 import { Column, Entity, Index, OneToMany, Relation } from 'typeorm';
 import { Calificaciones } from './Calificaciones';
 import { Notificaciones } from './Notificaciones';
-import { Pagos } from './Pagos';
 import { Pujas } from './Pujas';
 import { Sesiones } from './Sesiones';
 import { Subastas } from './Subastas';
@@ -64,9 +63,6 @@ export class Usuarios {
   )
   notificaciones: Relation<Notificaciones>[];
 
-  @OneToMany(() => Pagos, (pagos) => pagos.idComprador)
-  pagos: Relation<Pagos>[];
-
   @OneToMany(() => Pujas, (pujas) => pujas.idUsuario2)
   pujas: Relation<Pujas>[];
 
@@ -85,3 +81,4 @@ export class Usuarios {
   @OneToMany(() => UsuarioRoles, (usuarioRoles) => usuarioRoles.idUsuario2)
   usuarioRoles: UsuarioRoles[];
 }
+

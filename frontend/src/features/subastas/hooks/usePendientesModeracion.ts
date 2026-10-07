@@ -8,3 +8,4 @@ export function usePendientesModeracion() {
     refetchInterval: 5_000,
   });
 }
+

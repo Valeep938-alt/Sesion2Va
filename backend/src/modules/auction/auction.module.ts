@@ -11,3 +11,4 @@ import { CommonModule } from '../../common/common.module';
   exports: [AuctionGateway],
 })
 export class AuctionModule {}
+

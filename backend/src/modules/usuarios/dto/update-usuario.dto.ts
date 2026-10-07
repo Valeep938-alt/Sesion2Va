@@ -12,3 +12,4 @@ export class UpdateUsuarioDto {
   @IsIn(['Activo', 'Inactivo', 'Bloqueado'])
   estado?: string;
 }
+

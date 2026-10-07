@@ -16,3 +16,4 @@ export const calificacionService = {
     return data as { promedio: number; total: number };
   },
 };
+

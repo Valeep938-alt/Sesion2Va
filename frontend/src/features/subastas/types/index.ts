@@ -23,7 +23,6 @@ export interface SubastaResumen {
   estado: EstadoSubasta;
   precioBase: string;
   motivoRechazo?: string | null;
-  esPrivada: boolean;
   requiereReserva: boolean;
   fechaInicio: string;
   fechaFin: string;
@@ -39,7 +38,6 @@ export interface SubastaDetalle {
   precioBase: string;
   incrementoMinimoPct: string;
   requiereReserva: boolean;
-  esPrivada: boolean;
   estado: EstadoSubasta;
   motivoRechazo: string | null;
   fechaInicio: string;
@@ -66,7 +64,6 @@ export interface PayloadCrearSubasta {
   fechaInicio: string;
   fechaFin: string;
   limiteUsuariosConcurrentes?: number;
-  esPrivada?: boolean;
   requiereReserva?: boolean;
   imagenes?: string[];
 }
@@ -113,3 +110,4 @@ export interface AuctionCerrada {
   montoFinal: string | null;
   timestamp: number;
 }
+

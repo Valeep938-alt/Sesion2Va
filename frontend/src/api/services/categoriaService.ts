@@ -30,3 +30,4 @@ export const categoriaService = {
     await axiosClient.delete(`/categorias/${idCategoria}`);
   },
 };
+

@@ -20,14 +20,12 @@ import { formatearMoneda, formatearFechaHora } from "@/utils/formatters";
 import { calificacionService } from "@/api/services/calificacionService";
 import { PanelCalificacion } from "@/features/calificaciones/components/PanelCalificacion";
 import { EstadoBadge } from "./EstadoBadge";
-import { SubastaPrivada } from "./SubastaPrivada";
 import type { SubastaDetalle } from "../types";
 
 export function SubastaDetalleView() {
   const params = useParams<{ id: string }>();
   const id = params.id as string;
   const router = useRouter();
-  const [accesoSolicitado, setAccesoSolicitado] = useState(false);
 
   const { data, isPending, isError } = useSubastaDetalle(id);
   const inscribirse = useInscribirse();
@@ -269,7 +267,6 @@ export function SubastaDetalleView() {
                   ? "Acceso con reserva previa"
                   : "Acceso público"}
               </li>
-              {s.esPrivada && <li>• Sala privada por invitación.</li>}
               <li>• Comisiones del 5% sobre el precio final.</li>
             </ul>
           </div>
@@ -283,3 +280,4 @@ export function SubastaDetalleView() {
     </div>
   );
 }
+

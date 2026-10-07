@@ -20,3 +20,4 @@ export class Roles {
   @OneToMany(() => UsuarioRoles, (usuarioRoles) => usuarioRoles.idRol2)
   usuarioRoles: UsuarioRoles[];
 }
+

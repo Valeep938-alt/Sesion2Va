@@ -4,3 +4,4 @@ export class ChangeRoleDto {
   @IsIn(['Comprador', 'Subastador', 'Usuario'])
   rol: string;
 }
+

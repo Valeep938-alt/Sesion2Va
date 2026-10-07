@@ -11,3 +11,4 @@ export function EstadoBadge({ estado }: { estado: EstadoSubasta }) {
     </span>
   );
 }
+

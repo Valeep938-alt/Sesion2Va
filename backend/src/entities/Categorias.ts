@@ -52,3 +52,4 @@ export class Categorias {
   @OneToMany(() => Subastas, (subastas) => subastas.idCategoria2)
   subastas: Relation<Subastas>[];
 }
+

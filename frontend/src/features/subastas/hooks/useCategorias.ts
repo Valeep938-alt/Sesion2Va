@@ -8,3 +8,4 @@ export function useCategorias() {
     staleTime: 5 * 60_000,
   });
 }
+

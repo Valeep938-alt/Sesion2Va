@@ -8,3 +8,4 @@ export function useSubastaDetalle(id: string | undefined) {
     enabled: Boolean(id),
   });
 }
+

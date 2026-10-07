@@ -7,3 +7,4 @@ export class LoginDto {
   @IsString()
   contraseña: string;
 }
+

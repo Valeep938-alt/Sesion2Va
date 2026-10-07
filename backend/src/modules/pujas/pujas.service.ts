@@ -24,7 +24,6 @@ export interface SnapshotSubasta {
   estado: string;
   idSubastador: string;
   esDueño: boolean;
-  esPrivada: boolean;
   totalPujas: number;
   limiteUsuariosConcurrentes: number | null;
   precioBase: number;
@@ -93,7 +92,6 @@ export class PujasService {
       esDueño: requesterId
         ? subasta.idSubastador.idUsuario === requesterId
         : false,
-      esPrivada: subasta.esPrivada,
       totalPujas,
       limiteUsuariosConcurrentes: subasta.limiteUsuariosConcurrentes,
       precioBase: Number(subasta.precioBase),
@@ -279,3 +277,4 @@ export class PujasService {
     }
   }
 }
+

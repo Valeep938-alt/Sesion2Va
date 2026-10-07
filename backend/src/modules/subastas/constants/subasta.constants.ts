@@ -10,3 +10,4 @@ export const TRANSICIONES_ESTADOS: Record<string, readonly string[]> = {
   Rechazada: [],
   Finalizada: [],
 };
+

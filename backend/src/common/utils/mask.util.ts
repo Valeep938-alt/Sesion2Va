@@ -4,3 +4,4 @@ export function enmascararCorreo(correo?: string | null): string {
   if (!usuario || !dominio) return 'Anónimo';
   return `${usuario.charAt(0)}***@${dominio}`;
 }
+

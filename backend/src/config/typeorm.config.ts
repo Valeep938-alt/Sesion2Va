@@ -22,3 +22,4 @@ export const typeOrmConfig = (): TypeOrmModuleOptions => {
     synchronize: process.env.NODE_ENV !== 'production',
   };
 };
+

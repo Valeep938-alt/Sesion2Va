@@ -11,3 +11,4 @@ export function useSubastas(filtros: FiltrosCatalogo) {
     placeholderData: keepPreviousData,
   });
 }
+

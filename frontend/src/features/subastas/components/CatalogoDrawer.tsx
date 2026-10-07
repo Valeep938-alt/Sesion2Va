@@ -139,3 +139,4 @@ function ItemLote({ lote }: { lote: SubastaResumen }) {
     </Link>
   );
 }
+

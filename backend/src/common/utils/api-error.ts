@@ -12,3 +12,4 @@ export const apiError = (
   code: ErrorCodes | string,
   message: string,
 ): ApiException => new ApiException(status, code, message);
+

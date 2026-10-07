@@ -44,3 +44,4 @@ export class FiltroSubastasDto {
   @Min(0)
   readonly offset?: number;
 }
+

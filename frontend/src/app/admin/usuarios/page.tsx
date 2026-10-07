@@ -18,7 +18,7 @@ interface UsuarioAdmin {
 }
 
 const COLOR_ROL: Record<string, string> = {
-  Admin: "bg-stone-900 text-white",
+  Administrador: "bg-stone-900 text-white",
   Subastador: "bg-blue-100 text-blue-700",
   Comprador: "bg-green-100 text-green-700",
   Usuario: "bg-amber-100 text-amber-700",
@@ -32,7 +32,7 @@ export default function AdminUsuariosPage() {
   );
 
   const { data, isPending } = useQuery({
-    queryKey: ["admin", "usuarios"],
+    queryKey: ["Administrador", "usuarios"],
     queryFn: async () => {
       const { data } =
         await axiosClient.get<UsuarioAdmin[]>("/usuarios");
@@ -44,7 +44,7 @@ export default function AdminUsuariosPage() {
     mutationFn: (id: string) => axiosClient.delete(`/usuarios/${id}`),
     onSuccess: () => {
       toast.success("Usuario eliminado");
-      void queryClient.invalidateQueries({ queryKey: ["admin", "usuarios"] });
+      void queryClient.invalidateQueries({ queryKey: ["Administrador", "usuarios"] });
     },
     onError: (e) => toast.error(obtenerMensajeError(e)),
   });
@@ -142,3 +142,4 @@ export default function AdminUsuariosPage() {
     </div>
   );
 }
+

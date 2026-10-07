@@ -296,3 +296,4 @@ export function SubastasView() {
     </div>
   );
 }
+

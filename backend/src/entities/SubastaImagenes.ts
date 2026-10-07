@@ -34,3 +34,4 @@ export class SubastaImagenes {
   @JoinColumn([{ name: 'id_subasta', referencedColumnName: 'idSubasta' }])
   idSubasta2: Relation<Subastas>;
 }
+

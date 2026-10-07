@@ -11,3 +11,4 @@ export class CreatePujaDto {
   @Min(1)
   readonly monto!: number;
 }
+

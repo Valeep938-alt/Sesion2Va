@@ -9,3 +9,4 @@ export function formatearMoneda(
     maximumFractionDigits: 0,
   }).format(numero);
 }
+

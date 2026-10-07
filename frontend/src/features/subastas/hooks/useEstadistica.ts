@@ -7,3 +7,4 @@ export function useEstadisticas() {
     queryFn: subastaService.getEstadisticas,
   });
 }
+

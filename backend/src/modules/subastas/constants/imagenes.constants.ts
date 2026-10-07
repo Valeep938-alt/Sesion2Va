@@ -5,3 +5,4 @@ export const TIPOS_IMAGEN_PERMITIDOS: readonly string[] = [
   'image/png',
   'image/webp',
 ];
+

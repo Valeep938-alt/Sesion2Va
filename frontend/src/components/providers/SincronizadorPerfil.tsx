@@ -6,3 +6,4 @@ export function SincronizadorPerfil() {
   useSincronizarPerfil();
   return null;
 }
+

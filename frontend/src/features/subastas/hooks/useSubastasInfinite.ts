@@ -32,3 +32,4 @@ export function useSubastasInfinite(filtros: FiltrosFormulario) {
       lastPage.length === PAGE_SIZE ? allPages.length * PAGE_SIZE : undefined,
   });
 }
+

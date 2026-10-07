@@ -13,3 +13,4 @@ export function useCancelarInscripcion() {
       subastaService.cancelarInscripcion(idSubasta),
   });
 }
+

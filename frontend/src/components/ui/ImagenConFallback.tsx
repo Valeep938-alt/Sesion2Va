@@ -13,3 +13,4 @@ export function ImagenConFallback({
 }) {
   return <img src={src ?? FALLBACK_IMAGEN} alt={alt} className={className} />;
 }
+

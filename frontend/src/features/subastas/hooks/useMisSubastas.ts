@@ -9,3 +9,4 @@ export function useMisSubastas() {
     refetchInterval: 10_000,
   });
 }
+

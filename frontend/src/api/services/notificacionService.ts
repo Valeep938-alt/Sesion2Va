@@ -28,3 +28,4 @@ export const notificacionService = {
     await axiosClient.patch("/bandeja/leer-todas");
   },
 };
+

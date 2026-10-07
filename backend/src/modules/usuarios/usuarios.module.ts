@@ -13,3 +13,4 @@ import { Calificaciones } from '../../entities/Calificaciones';
   providers: [UsuariosService],
 })
 export class UsuariosModule {}
+

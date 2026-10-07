@@ -5,3 +5,4 @@ export class VerificarImagenDto {
   @IsUrl({ require_protocol: true })
   readonly url?: string;
 }
+

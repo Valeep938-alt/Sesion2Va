@@ -15,7 +15,6 @@ const MENSAJES_POR_CODIGO: Record<string, string> = {
     "Solo el dueño de esta subasta puede realizar esta acción.",
   SUBASTA_NO_EDITABLE: "Solo puedes editarla mientras esté en revisión.",
   SUBASTA_NO_ELIMINABLE: "Solo puedes eliminarla mientras esté en revisión.",
-  SUBASTA_PRIVADA: "Esta subasta es privada y requiere invitación.",
   ESTADO_INVALIDO: "La subasta no está en un estado que permita esta acción.",
   MOTIVO_REQUERIDO: "Indica el motivo del rechazo.",
   FECHAS_INVALIDAS: "Revisa las fechas de inicio y fin de la subasta.",
@@ -83,3 +82,4 @@ export function obtenerMensajeError(error: unknown): string {
     traducirError(error)
   );
 }
+

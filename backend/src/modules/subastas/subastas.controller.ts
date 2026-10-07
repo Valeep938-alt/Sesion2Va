@@ -37,7 +37,7 @@ export class SubastasController {
   ) {}
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Subastador', 'Usuario', 'Admin')
+  @Roles('Subastador', 'Usuario', 'Administrador')
   @Post()
   create(@Body() dto: CreateSubastaDto, @Req() req: AuthenticatedRequest) {
     return this.subastasService.create(dto, req.user.userId);
@@ -55,7 +55,7 @@ export class SubastasController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Subastador', 'Usuario', 'Admin')
+  @Roles('Subastador', 'Usuario', 'Administrador')
   @Post('imagenes/verificar')
   @UseInterceptors(
     FileInterceptor('archivo', {
@@ -77,7 +77,7 @@ export class SubastasController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Admin')
+  @Roles('Administrador')
   @Get('pendientes')
   findPendientes() {
     return this.subastasService.findPendientes();
@@ -90,7 +90,7 @@ export class SubastasController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Subastador', 'Usuario', 'Admin')
+  @Roles('Subastador', 'Usuario', 'Administrador')
   @Patch(':id')
   update(
     @Param('id') id: string,
@@ -101,21 +101,21 @@ export class SubastasController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Subastador', 'Usuario', 'Admin')
+  @Roles('Subastador', 'Usuario', 'Administrador')
   @Delete(':id')
   remove(@Param('id') id: string, @Req() req: AuthenticatedRequest) {
     return this.subastasService.remove(id, req.user.userId);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Admin')
+  @Roles('Administrador')
   @Patch(':id/aprobar')
   aprobarSubasta(@Param('id') id: string, @Req() req: AuthenticatedRequest) {
     return this.subastasService.cambiarEstado(id, 'Aprobada', req.user.userId);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Admin')
+  @Roles('Administrador')
   @Patch(':id/rechazar')
   rechazarSubasta(
     @Param('id') id: string,
@@ -125,3 +125,4 @@ export class SubastasController {
     return this.subastasService.rechazarSubasta(id, motivo, req.user.userId);
   }
 }
+

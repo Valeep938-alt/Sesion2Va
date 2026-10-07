@@ -7,7 +7,6 @@ import { Categorias } from './Categorias';
 import { Subastas } from './Subastas';
 import { Calificaciones } from './Calificaciones';
 import { Notificaciones } from './Notificaciones';
-import { Pagos } from './Pagos';
 import { Pujas } from './Pujas';
 import { Sesiones } from './Sesiones';
 import { SubastaImagenes } from './SubastaImagenes';
@@ -23,7 +22,6 @@ const ENTITIES = [
   SubastaImagenes,
   Calificaciones,
   Notificaciones,
-  Pagos,
   Pujas,
 ];
 
@@ -32,3 +30,4 @@ const ENTITIES = [
   exports: [TypeOrmModule],
 })
 export class EntitiesModule {}
+

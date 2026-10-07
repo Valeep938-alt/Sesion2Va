@@ -18,3 +18,4 @@ export class UserRolesService {
     return registros.map((r) => r.idRol2.nombreRol);
   }
 }
+

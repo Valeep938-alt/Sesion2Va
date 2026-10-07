@@ -34,3 +34,4 @@ export class UsuarioRoles {
   @JoinColumn([{ name: 'id_usuario', referencedColumnName: 'idUsuario' }])
   idUsuario2: Relation<Usuarios>;
 }
+

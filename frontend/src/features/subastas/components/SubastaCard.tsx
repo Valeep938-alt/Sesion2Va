@@ -96,3 +96,4 @@ export function SubastaCard({ subasta }: { subasta: SubastaResumen }) {
     </div>
   );
 }
+

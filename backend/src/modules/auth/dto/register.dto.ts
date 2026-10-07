@@ -17,3 +17,4 @@ export class RegisterDto {
   @IsIn(['Comprador', 'Subastador', 'Usuario'])
   rol: string;
 }
+

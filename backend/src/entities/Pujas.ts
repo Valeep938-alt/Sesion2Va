@@ -57,3 +57,4 @@ export class Pujas {
   @JoinColumn([{ name: 'id_usuario', referencedColumnName: 'idUsuario' }])
   idUsuario2: Relation<Usuarios>;
 }
+

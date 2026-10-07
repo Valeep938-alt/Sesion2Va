@@ -86,3 +86,4 @@ export class UsuariosService {
     return this.usuariosRepo.update({ idUsuario }, { estado: 'Inactivo' });
   }
 }
+

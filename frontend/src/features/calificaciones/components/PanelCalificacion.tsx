@@ -98,3 +98,4 @@ export function PanelCalificacion({ idSubasta }: { idSubasta: string }) {
     </motion.div>
   );
 }
+

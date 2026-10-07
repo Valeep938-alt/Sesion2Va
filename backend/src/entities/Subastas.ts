@@ -10,7 +10,6 @@ import {
 } from 'typeorm';
 import { Calificaciones } from './Calificaciones';
 import { Notificaciones } from './Notificaciones';
-import { Pagos } from './Pagos';
 import { Pujas } from './Pujas';
 import { Usuarios } from './Usuarios';
 import { Categorias } from './Categorias';
@@ -88,9 +87,6 @@ export class Subastas {
   @OneToMany(() => Notificaciones, (notificaciones) => notificaciones.idSubasta)
   notificaciones: Relation<Notificaciones>[];
 
-  @OneToOne(() => Pagos, (pagos) => pagos.idSubasta2)
-  pagos: Relation<Pagos>;
-
   @OneToMany(() => Pujas, (pujas) => pujas.idSubasta2)
   pujas: Relation<Pujas>[];
 
@@ -112,9 +108,7 @@ export class Subastas {
   @JoinColumn([{ name: 'id_subastador', referencedColumnName: 'idUsuario' }])
   idSubastador: Relation<Usuarios>;
 
-  @Column('boolean', { name: 'es_privada', default: false })
-  esPrivada: boolean;
-
   @OneToMany(() => SubastaImagenes, (imagen) => imagen.idSubasta2)
   imagenes: Relation<SubastaImagenes>[];
 }
+

@@ -42,14 +42,6 @@ export class CreateSubastaDto {
   @Max(100)
   readonly incrementoMinimoPct?: number;
 
-  @IsOptional()
-  @IsBoolean()
-  readonly requiereReserva?: boolean;
-
-  @IsOptional()
-  @IsBoolean()
-  readonly esPrivada?: boolean;
-
   @IsDateString()
   readonly fechaInicio!: string;
 
@@ -73,3 +65,4 @@ export class CreateSubastaDto {
   @Max(1000, { message: 'El límite máximo es 1000 usuarios' })
   readonly limiteUsuariosConcurrentes?: number;
 }
+

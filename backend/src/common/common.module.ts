@@ -11,3 +11,4 @@ import { SalaStateService } from './services/sala-state.service';
   exports: [UserRolesService, ImageModerationService, SalaStateService],
 })
 export class CommonModule {}
+

@@ -16,3 +16,4 @@ export function usePerfilVendedor(id: string | undefined) {
     enabled: Boolean(id),
   });
 }
+

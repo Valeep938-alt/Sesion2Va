@@ -18,3 +18,4 @@ export class SalaStateService {
     return this.compradoresPorSala.get(subastaId)?.size ?? 0;
   }
 }
+

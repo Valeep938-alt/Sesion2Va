@@ -7,3 +7,4 @@ export function useRealizarPuja() {
       pujaService.realizar(idSubasta, monto),
   });
 }
+

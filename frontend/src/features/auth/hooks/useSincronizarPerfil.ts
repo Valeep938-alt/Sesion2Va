@@ -22,3 +22,4 @@ export function useSincronizarPerfil() {
     if (data?.user) sincronizar(data.user);
   }, [data, sincronizar]);
 }
+

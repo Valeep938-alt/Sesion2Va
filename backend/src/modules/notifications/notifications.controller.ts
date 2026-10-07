@@ -13,3 +13,4 @@ export class NotificationsController {
     return this.service.findAllByUser(req.user.userId);
   }
 }
+

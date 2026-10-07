@@ -2,3 +2,4 @@ import { CrearSubastaView } from "@/features/subastas/components/CrearSubastaVie
 export default function CrearSubastaPage() {
   return <CrearSubastaView />;
 }
+

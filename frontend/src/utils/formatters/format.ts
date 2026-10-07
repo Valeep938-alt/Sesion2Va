@@ -16,3 +16,4 @@ export function formatDuration(ms: number): string {
     ? `${pad(horas)}:${pad(minutos)}:${pad(segundos)}`
     : `${pad(minutos)}:${pad(segundos)}`;
 }
+

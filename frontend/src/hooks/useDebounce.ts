@@ -12,3 +12,4 @@ export function useDebounce<T>(valor: T, delayMs = 400): T {
 
   return valorDebounced;
 }
+

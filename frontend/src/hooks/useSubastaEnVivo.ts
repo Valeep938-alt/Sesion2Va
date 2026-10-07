@@ -72,3 +72,4 @@ export function useSubastaEnVivo(idSubasta: string): DatosSubastaEnVivo {
 
   return datos;
 }
+

@@ -46,3 +46,4 @@ export class Calificaciones {
   @JoinColumn([{ name: 'id_subastador', referencedColumnName: 'idUsuario' }])
   idSubastador2: Relation<Usuarios>;
 }
+

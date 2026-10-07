@@ -25,9 +25,9 @@ export function Navbar() {
 
   const roles: string[] = user?.roles ?? [];
   const esSubastador = roles.some((r) =>
-    ["Subastador", "Usuario", "Admin"].includes(r),
+    ["Subastador", "Usuario", "Administrador"].includes(r),
   );
-  const esAdmin = roles.includes("Admin");
+  const esAdmin = roles.includes("Administrador");
 
   const links = [
     { href: "/", label: "Catálogo", visible: true, prefijo: false },
@@ -37,7 +37,7 @@ export function Navbar() {
       visible: esSubastador,
       prefijo: true,
     },
-    { href: "/admin", label: "Admin", visible: esAdmin, prefijo: true },
+    { href: "/admin", label: "Administrador", visible: esAdmin, prefijo: true },
     {
       href: "/moderacion",
       label: "Moderación",
@@ -182,3 +182,4 @@ export function Navbar() {
     </header>
   );
 }
+
